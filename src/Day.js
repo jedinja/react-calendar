@@ -18,6 +18,8 @@ const renderHeader = (props) => {
 };
 
 const renderAgenda = (props) => {
+	console.info('Day:', props, props.children);
+
   if (!props.dayAgenda) {
     return null;
   }

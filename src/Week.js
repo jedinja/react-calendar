@@ -67,8 +67,8 @@ const Week = (props) => {
             }
 
             let dayAgendaComponent = (dayAgendaComponents || {})[date.format('YYYY-MM-DD')] || null;
-            return
-              (<Day outside={ !!outside } key={ `day-${i}` } date={ date } mods={ day } dayAgenda={ dayAgenda }>
+            console.info('Week:', dayAgendaComponent, dayAgenda, date);
+            return (<Day outside={ !!outside } key={ `day-${i}` } date={ date } mods={ day } dayAgenda={ dayAgenda }>
                 { dayAgendaComponent }
             </Day>);
           })

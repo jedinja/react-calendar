@@ -67,6 +67,7 @@ const Month = (props) => {
     events = modifiers.events;
   }
 
+  console.info('Month', dayAgenda, dayAgendaComponents);
   return (
     <div className={ classnames(clsPrefix, clsMods) } { ...events }>
       { renderHeader(props) }
