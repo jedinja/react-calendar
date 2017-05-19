@@ -39,7 +39,7 @@ const renderHeader = (props) => {
 };
 
 const Month = (props) => {
-  const { date, weekNumbers } = props;
+  const { date, weekNumbers, dayAgenda, dayAgendaComponents } = props;
   const edges = monthEdges(date);
 
   let { mods, day, week } = props;
@@ -78,7 +78,9 @@ const Month = (props) => {
                 edges={ edges }
                 weekNumbers={ weekNumbers }
                 mods={ fWeekMods }
-                day={ fDayMods } />
+                day={ fDayMods }
+                dayAgenda={ dayAgenda}
+                dayAgendaComponents={dayAgendaComponents} />
         )
       }
     </div>

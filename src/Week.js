@@ -38,7 +38,7 @@ const renderWeekHeader = (props) => {
 };
 
 const Week = (props) => {
-  const { mods, date } = props;
+  const { mods, date, dayAgenda, dayAgendaComponents } = props;
   let clsMods, events, week, { day } = props;
 
   week = getModsByCompType('week', mods);
@@ -66,7 +66,11 @@ const Week = (props) => {
               outside = Boolean(props.edges.find((edge, j) => edge.isSame(date, 'month', 'week', 'year')));
             }
 
-            return <Day outside={ !!outside } key={ `day-${i}` } date={ date } mods={ day } />
+            let dayAgendaComponent = (dayAgendaComponents || {})[date.format('YYYY-MM-DD')] || null;
+            return
+              (<Day outside={ !!outside } key={ `day-${i}` } date={ date } mods={ day } dayAgenda={ dayAgenda }>
+                { dayAgendaComponent }
+            </Day>);
           })
         }
       </div>
